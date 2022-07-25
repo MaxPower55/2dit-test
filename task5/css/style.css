@@ -8,7 +8,7 @@
   --cards-subheader: #626262;
   --cards-subheader-bg: #fff;
   --card-name: #A7A7A7;
-  --chart-text: #262424;
+  --chart-text: #c7ec95;
 }
 
 @font-face {
@@ -149,32 +149,6 @@
 .card__chart {
   width: 200px;
   align-self: center;
-}
-
-.card__chart p:nth-child(1) {
-  font: normal 600 38px 'Mail Sans Roman';
-  text-align: center;
-  color: var(--chart-text);
-}
-
-.card__chart p:nth-child(2) {
-  font: normal 400 16px/10px 'Mail Sans Roman';
-  text-align: center;
-  color: var(--chart-text);
-}
-
-.card__descr {
-  font: normal 400 12px/200% 'Mail Sans Roman';
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  letter-spacing: -0.04em;
-  color: var(--text);
-}
-
-.descr__item {
-  padding: 0 10px 0 20px;
-  background: radial-gradient(circle at 5% 50%, #E83D46 0px 6px, transparent 7px 100%) no-repeat;
 }
 
 @supports (-webkit-appearance:none) {
