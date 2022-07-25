@@ -44,7 +44,6 @@
   width: 1360px;
   background: var(--white);
   padding: 60px 30px;
-  border: 1px dashed darkred;
 }
 
 .dashboard__checkbox {
