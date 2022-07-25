@@ -192,6 +192,18 @@
 }
 }
 
+@media screen and (max-width: 1100px) {
+  .dashboard__cards {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
+}
+
 @media screen and (max-width: 800px) {
   .dashboard {
     padding: 30px 15px;
@@ -200,10 +212,14 @@
     align-items: center;
   }
 
-  .dashboard__cards {
+@supports (-webkit-appearance:none) {
+
+}
+}
+
+@media screen and (max-width: 550px) {
+  .cards__innercontainer {
     flex-direction: column;
-    gap: 30px;
-    width: 100%;
   }
 
 @supports (-webkit-appearance:none) {
