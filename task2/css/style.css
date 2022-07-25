@@ -1,0 +1,237 @@
+:root {
+  --text-color-regular: #A5A5A5;
+  --text-color-primary: #6E6659;
+  --text-color-accent: #264E58;
+  --text-color-instock: #4F493F;
+  --bg-lightgray: #EFF5F5;
+  --bg-red: #A32018;
+  --bg-yellow: #E0CD1C;
+  --bg-green: #087A28;
+  --bg-white: #FFFFFF;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url('../fonts/proximanova_regular.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url('../fonts/proximanova_bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Parangon";
+  src: url('../fonts/Parangon530C.ttf');
+  font-weight: normal;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 1014px;
+  padding: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 36px;
+  column-gap: 36px;
+  row-gap: 30px;
+}
+
+.card {
+  padding: 0;
+  max-width: 290px;
+  background: var(--bg-lightgray);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-self: center;
+  font-family: 'Proxima Nova';
+  font-style: normal;
+}
+
+.prod__img {
+  width: 100%;
+  position: relative;
+}
+
+.prod__img img {
+  width: 100%;
+  max-height: 290px;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.prod__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 12.5px 20px;
+}
+
+.prod__info div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.prod__type {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--text-color-primary);
+}
+
+.prod__name {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--text-color-accent);
+}
+
+.prod__text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--text-color-regular);
+}
+
+.prod__vendorcode {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--text-color-accent);
+  text-transform: uppercase;
+}
+
+.prod__price {
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  color: var(--text-color-regular);
+}
+
+.prod__prompt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0.9;
+}
+
+.prompt {
+  font: normal 400 10px/10px "Parangon";
+  padding: 5px 7px 3px 17px;
+  text-transform: uppercase;
+  color: var(--bg-white);
+  position: relative;
+  text-align: center;
+  display: none;
+}
+
+.prompt__hit {
+  background: var(--bg-red);
+}
+
+.prompt__hit::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  background: url('../img/icon-star.svg') no-repeat;
+  background-size: 80% 80%;
+  background-position: top center;
+}
+
+.prompt__sale {
+  background: var(--bg-yellow);
+}
+
+.prompt__sale::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background: url('../img/icon-discount.svg') no-repeat;
+  background-size: 80% 80%;
+  background-position: top center;
+}
+
+.prompt__new {
+  background: var(--bg-green);
+}
+
+.prompt__new::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background: url('../img/icon-newprod.svg') no-repeat;
+  background-size: 80% 80%;
+  background-position: top center;
+}
+
+.prompt__instock {
+  font: normal 400 10px/10px 'Proxima Nova';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 3px 6px 3px 16px;
+  background: var(--bg-white);
+  color: var(--text-color-instock);
+  display: none;
+}
+
+.prompt__instock::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background: url('../img/icon-check-ok.png') no-repeat;
+  background-size: 80% 80%;
+  background-position: top center;
+}
+
+.prompt-active {
+  display: block;
+}
+
+@supports (-webkit-appearance:none) {
+  .prompt__hit::before {
+    background: url('../img/icon-star.svg') no-repeat;
+  }
+
+  .prompt__sale::before {
+    background: url('../img/icon-discount.svg') no-repeat;
+  }
+
+  .prompt__new::before {
+    background: url('../img/icon-newprod.svg') no-repeat;
+  }
+
+  .prompt__instock::before {
+    background: url('../img/icon-check-ok.webp') no-repeat;
+  }
+}

@@ -1,0 +1,220 @@
+:root {
+  --white: #FFF;
+  --light-gray: #eee;
+  --black: #000;
+}
+
+@font-face {
+  font-family: "HelveticaNeueCyr";
+  src: url('../fonts/HelveticaNeueCyr-Medium.ttf');
+  font-weight: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: 1360px;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* СТИЛЬ КАРТОЧКИ */
+
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0 35px;
+  overflow: hidden;
+}
+
+.cardblock {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  mix-blend-mode: difference;
+}
+
+.card__header {
+  position: relative;
+}
+
+/* СТИЛИ НЕЧЕТНЫХ КАРТОЧЕК */
+
+.cardblock:nth-child(1) {
+  padding: calc(20px + (66 - 20) * ((100vw - 800px) / (1360 - 800))) 0 28px 0;
+}
+
+.cardblock:nth-child(2) {
+  align-items: flex-end;
+}
+
+.card__header p:nth-child(1) {
+  font: normal 400 20px/150% 'HelveticaNeueCyr';
+  position: absolute;
+  top: -28px;
+  left: -2px;
+  mix-blend-mode: difference;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.card__header p:nth-child(2) {
+  font: normal 400 calc(32px + (48 - 32) * ((100vw - 800px) / (1360 - 800)))/150% 'HelveticaNeueCyr';
+  margin: -20px 0 0 38px;
+  letter-spacing: -0.5pt;
+  white-space: nowrap;
+  mix-blend-mode: difference;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.card__descr {
+  font: normal 400 calc(12px + (15 - 12) * ((100vw - 800px) / (1360 - 800)))/150% 'HelveticaNeueCyr';
+  margin-top: 10px;
+  padding: 0px 22px 0 30px;
+  margin-left: calc(20px + (80 - 20) * ((100vw - 800px) / (1360 - 800)));
+  color: var(--black);
+  border-left: 1px solid var(--black);
+}
+
+.card__img {
+  width: 97%;
+  justify-content: flex-end;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.cardblock:nth-child(2) picture {
+  width: 100%;
+}
+
+/* СТИЛИ ЧЁТНЫХ КАРТОЧЕК */
+
+.card:nth-child(2) {
+  flex-direction: row-reverse;
+}
+
+.card:nth-child(2) .card__img {
+  align-self: flex-start;
+}
+
+.card:nth-child(2) .cardblock:nth-child(1) {
+  padding: calc(40px + (100 - 40) * ((100vw - 800px) / (1360 - 800))) 0 28px 0;
+}
+
+.card:nth-child(2) .card__header {
+  margin-left: -300px;
+}
+
+.card:nth-child(2) .card__descr {
+  margin-left: 12px;
+}
+
+.card:nth-child(2) .cardblock:nth-child(2) picture {
+  width: 100%;
+}
+
+@supports (-webkit-appearance:none) {
+
+}
+
+@media screen and (min-width: 1360px) {
+  .cardblock:nth-child(1) {
+    padding: 66px 0 28px 0;
+  }
+
+  .card__header p:nth-child(2) {
+    font-size: 48px;
+  }
+
+  .card__descr {
+    margin-left: 80px;
+    font-size: 15px;
+  }
+
+  .card:nth-child(2) .cardblock:nth-child(1) {
+    padding: 100px 0 28px 0;
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
+}
+
+@media screen and (max-width: 800px) {
+  /* НЕЧЁТНАЯ И ЧЁТНАЯ КАРТОЧКА */
+
+  .card {
+    flex-direction: column-reverse;
+    max-height: auto;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .card:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+
+  /* ПЕРВЫЙ И ВТОРОЙ БЛОКИ КАРТОЧКИ */
+
+  .cardblock {
+    width: 100%;
+    padding: 0px 0px 28px 0;
+  }
+
+  .cardblock:nth-child(1) {
+    margin-left: 0px;
+  }
+
+  .card:nth-child(2) .cardblock:nth-child(1) {
+    padding: 20px 0 28px 0;
+  }
+
+  /* БЛОК ЗАГОЛОВКА КАРТОЧКИ */
+
+  .card__header p:nth-child(2) {
+    white-space: initial;
+  }
+
+  .card:nth-child(2) .card__header {
+    margin-left: 0px;
+  }
+
+  /* БЛОК ТЕКСТОВОГО ОПИСАНИЯ */
+
+  .card__descr {
+    margin-left: 0px;
+    padding: 10px 0 0 10px;
+    font-size: 12px;
+    text-align: justify;
+  }
+
+  .card:nth-child(2) .card__descr {
+    margin-left: 0px;
+    padding-left: 10px;
+  }
+
+  /* БЛОК С ИЗОБРАЖЕНИЕМ */
+
+  .card__img {
+    width: 100%;
+    justify-content: center;
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
+}

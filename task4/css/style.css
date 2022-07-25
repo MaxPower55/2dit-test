@@ -1,0 +1,146 @@
+:root {
+  --white: #FFF;
+  --light-gray: #eee;
+  --black: #000;
+}
+
+@font-face {
+  font-family: "Gotham pro";
+  src: url('../fonts/gothampro_light.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gotham pro";
+  src: url('../fonts/gothampro_bold.ttf');
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 1360px;
+  background: url('../img/bg.png');
+}
+
+.form {
+  font-family: "Gotham pro";
+  font-style: normal;
+  color: var(--white);
+  padding: 210px 150px 186px 110px;
+  width: 100%;
+}
+
+.form__header {
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 105%;
+  letter-spacing: -0.03em;
+}
+
+.form__txt {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.form__block {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+}
+
+.input {
+  font: normal 16px/150% 'Gotham Pro';
+  width: 340px;
+  padding: 14px 30px 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--white);
+  transition: all 0.2s ease;
+}
+
+.input::-moz-placeholder {
+  font: normal 400 16px/150% 'Gotham Pro';
+  color: var(--white);
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.input:-ms-input-placeholder {
+  font: normal 400 16px/150% 'Gotham Pro';
+  color: var(--white);
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.input::placeholder {
+  font: normal 400 16px/150% 'Gotham Pro';
+  color: var(--white);
+  transition: all 0.2s ease;
+}
+
+.input:hover::-moz-placeholder,
+.input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+.input:hover:-ms-input-placeholder,
+.input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.input:hover::placeholder,
+.input:focus::placeholder {
+  color: transparent;
+}
+
+.input__tel {
+  padding-left: 60px;
+  background: url('../img/icon-flag.png') no-repeat left 6% center;
+}
+
+.btn {
+  font: 400 16px/150% 'Gotham Pro';
+  width: 340px;
+  background: var(--white);
+  color: var(--black);
+}
+
+.form__agreement {
+  width: 65%;
+}
+
+.form__link {
+  color: #EB7979;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.form__link:hover,
+.form__link:focus {
+  text-decoration: underline;
+  transition: all 0.2s ease;
+}
+
+@supports (-webkit-appearance:none) {
+  .wrapper {
+    background: url('../img/bg.webp');
+  }
+
+  .input__tel {
+    background: url('../img/icon-flag.webp') no-repeat left 6% center;
+  }
+}

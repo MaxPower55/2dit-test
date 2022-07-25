@@ -1,0 +1,79 @@
+:root {
+  --blue: #283F75;
+  --gray: #5B5B5B;
+  --lightgray: #C6CDDA;
+  --white: #FFFFFF;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+}
+
+.spoiler {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.spoiler__item {
+  width: 560px;
+  max-height: 60px;
+  padding: 0 30px;
+  border: 1px solid var(--lightgray);
+  cursor: pointer;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.spoiler__item[open] {
+  max-height: 600px;
+}
+
+.spoiler__item summary {
+  font: normal 700 15px/60px 'Lato';
+  outline: none;
+  color: var(--blue);
+}
+
+.spoiler__item p {
+  font: normal 400 16px/150% 'Lato';
+  color: var(--gray);
+}
+
+summary {
+  display: block;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  background: url("../img/arrow-down.svg") no-repeat 0 0/100% 100%;
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  width: 20px;
+  height: 10px;
+}
+
+details[open] > summary::before {
+  background: url("../img/arrow-up.svg");
+}
+
+@supports (-webkit-appearance:none) {
+  summary::before {
+    background-image: url("../img/arrow-down.svg");
+  }
+
+  details[open] > summary::before {
+    background-image: url("../img/arrow-up.svg");
+  }
+}
